@@ -16,7 +16,7 @@ async def lifespan(app):
     yield
 
 
-app = FastAPI(title="购物 AI 电商", version="2.0.0", lifespan=lifespan)
+app = FastAPI(title="购物 SHOPPING · AI 电商客服", version="2.0.0", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins.split(","),
