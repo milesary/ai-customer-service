@@ -1,6 +1,7 @@
-"""初始化知识库和模拟数据"""
-from app.knowledge_base.loader import seed_knowledge_base
+"""幂等初始化本地商店、知识库和演示账户。"""
+
+from app.db import initialize
 
 if __name__ == "__main__":
-    seed_knowledge_base()
+    initialize()
     print("初始化完成！")

@@ -1,0 +1,928 @@
+{
+  "dataset": "29 hand-authored queries / 13 seeded documents",
+  "scope": "Retrieval only; same corpus for both methods; no real LLM or production traffic.",
+  "methods": {
+    "legacy_jaccard": {
+      "hit_at_1": 0.8519,
+      "hit_at_3": 0.9259,
+      "mrr_at_3": 0.8889,
+      "unknown_empty_rate": 0.0,
+      "details": [
+        {
+          "query": "退货需要保持包装完整吗",
+          "expected": [
+            "returns"
+          ],
+          "retrieved": [
+            "returns",
+            "charger",
+            "hub"
+          ],
+          "scores": [
+            0.16363636363636364,
+            0.058823529411764705,
+            0.058823529411764705
+          ]
+        },
+        {
+          "query": "退款多久原路返回",
+          "expected": [
+            "returns"
+          ],
+          "retrieved": [
+            "returns",
+            "confirmation",
+            "payment"
+          ],
+          "scores": [
+            0.10909090909090909,
+            0.03508771929824561,
+            0.019230769230769232
+          ]
+        },
+        {
+          "query": "订单多少金额包邮",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "cancellation",
+            "payment"
+          ],
+          "scores": [
+            0.0851063829787234,
+            0.05714285714285714,
+            0.0392156862745098
+          ]
+        },
+        {
+          "query": "偏远地区配送要多久",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "returns",
+            "privacy"
+          ],
+          "scores": [
+            0.13043478260869565,
+            0.01639344262295082,
+            0.01639344262295082
+          ]
+        },
+        {
+          "query": "支付后多少小时发货",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "payment",
+            "cancellation"
+          ],
+          "scores": [
+            0.15555555555555556,
+            0.10204081632653061,
+            0.08571428571428572
+          ]
+        },
+        {
+          "query": "人为损坏能免费维修吗",
+          "expected": [
+            "warranty"
+          ],
+          "retrieved": [
+            "warranty",
+            "returns",
+            "mouse"
+          ],
+          "scores": [
+            0.1951219512195122,
+            0.03278688524590164,
+            0.020833333333333332
+          ]
+        },
+        {
+          "query": "充电板质保几个月",
+          "expected": [
+            "warranty",
+            "charger"
+          ],
+          "retrieved": [
+            "warranty",
+            "charger",
+            "hub"
+          ],
+          "scores": [
+            0.175,
+            0.1590909090909091,
+            0.10869565217391304
+          ]
+        },
+        {
+          "query": "模拟支付会扣款吗",
+          "expected": [
+            "payment"
+          ],
+          "retrieved": [
+            "payment",
+            "cancellation",
+            "confirmation"
+          ],
+          "scores": [
+            0.1276595744680851,
+            0.08823529411764706,
+            0.05357142857142857
+          ]
+        },
+        {
+          "query": "可以申请电子发票吗",
+          "expected": [
+            "payment"
+          ],
+          "retrieved": [
+            "payment",
+            "cancellation",
+            "returns"
+          ],
+          "scores": [
+            0.125,
+            0.08571428571428572,
+            0.05084745762711865
+          ]
+        },
+        {
+          "query": "取消订单会释放库存吗",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "cancellation",
+            "confirmation",
+            "shipping"
+          ],
+          "scores": [
+            0.3,
+            0.07017543859649122,
+            0.06
+          ]
+        },
+        {
+          "query": "已支付订单可以取消吗",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "cancellation",
+            "confirmation",
+            "shipping"
+          ],
+          "scores": [
+            0.25806451612903225,
+            0.12962962962962962,
+            0.10416666666666667
+          ]
+        },
+        {
+          "query": "能查询其他用户订单吗",
+          "expected": [
+            "privacy"
+          ],
+          "retrieved": [
+            "privacy",
+            "confirmation",
+            "payment"
+          ],
+          "scores": [
+            0.16666666666666666,
+            0.12962962962962962,
+            0.057692307692307696
+          ]
+        },
+        {
+          "query": "AI操作确认有效期多久",
+          "expected": [
+            "confirmation"
+          ],
+          "retrieved": [
+            "confirmation",
+            "warranty",
+            "shipping"
+          ],
+          "scores": [
+            0.1509433962264151,
+            0.020833333333333332,
+            0.019230769230769232
+          ]
+        },
+        {
+          "query": "H1耳机支持主动降噪吗",
+          "expected": [
+            "headphones"
+          ],
+          "retrieved": [
+            "headphones",
+            "keyboard",
+            "charger"
+          ],
+          "scores": [
+            0.21951219512195122,
+            0.0625,
+            0.06
+          ]
+        },
+        {
+          "query": "K8键盘兼容macOS吗",
+          "expected": [
+            "keyboard"
+          ],
+          "retrieved": [
+            "keyboard",
+            "warranty",
+            "mouse"
+          ],
+          "scores": [
+            0.14285714285714285,
+            0.045454545454545456,
+            0.022222222222222223
+          ]
+        },
+        {
+          "query": "Q15充电板支持Qi吗",
+          "expected": [
+            "charger"
+          ],
+          "retrieved": [
+            "charger",
+            "warranty",
+            "hub"
+          ],
+          "scores": [
+            0.1590909090909091,
+            0.06818181818181818,
+            0.0625
+          ]
+        },
+        {
+          "query": "S2音箱防水等级是多少",
+          "expected": [
+            "speaker"
+          ],
+          "retrieved": [
+            "speaker",
+            "warranty",
+            "mouse"
+          ],
+          "scores": [
+            0.13157894736842105,
+            0.0425531914893617,
+            0.020833333333333332
+          ]
+        },
+        {
+          "query": "M3鼠标支持蓝牙吗",
+          "expected": [
+            "mouse"
+          ],
+          "retrieved": [
+            "mouse",
+            "headphones",
+            "keyboard"
+          ],
+          "scores": [
+            0.175,
+            0.09090909090909091,
+            0.08888888888888889
+          ]
+        },
+        {
+          "query": "D7扩展坞可以连接显示器吗",
+          "expected": [
+            "hub"
+          ],
+          "retrieved": [
+            "hub",
+            "warranty",
+            "payment"
+          ],
+          "scores": [
+            0.1956521739130435,
+            0.0625,
+            0.05555555555555555
+          ]
+        },
+        {
+          "query": "zzzzzzzz",
+          "expected": [],
+          "retrieved": [
+            "returns",
+            "shipping",
+            "warranty"
+          ],
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "query": "火星移民指南",
+          "expected": [],
+          "retrieved": [
+            "returns",
+            "shipping",
+            "warranty"
+          ],
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "query": "东西还没付钱不想要了",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "cancellation",
+            "shipping",
+            "payment"
+          ],
+          "scores": [
+            0.05405405405405406,
+            0.0392156862745098,
+            0.03773584905660377
+          ]
+        },
+        {
+          "query": "快递寄新疆要几天",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "mouse",
+            "returns",
+            "privacy"
+          ],
+          "scores": [
+            0.021739130434782608,
+            0.016666666666666666,
+            0.016666666666666666
+          ]
+        },
+        {
+          "query": "耳机电池能撑多久",
+          "expected": [
+            "headphones"
+          ],
+          "retrieved": [
+            "warranty",
+            "headphones",
+            "charger"
+          ],
+          "scores": [
+            0.06818181818181818,
+            0.043478260869565216,
+            0.04081632653061224
+          ]
+        },
+        {
+          "query": "买89块的充电板要付多少邮费",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "warranty",
+            "shipping",
+            "charger"
+          ],
+          "scores": [
+            0.0851063829787234,
+            0.057692307692307696,
+            0.057692307692307696
+          ]
+        },
+        {
+          "query": "笔记本接外屏需要什么条件",
+          "expected": [
+            "hub"
+          ],
+          "retrieved": [
+            "hub",
+            "payment",
+            "returns"
+          ],
+          "scores": [
+            0.1,
+            0.05555555555555555,
+            0.031746031746031744
+          ]
+        },
+        {
+          "query": "不用我点按钮你就能加购吗",
+          "expected": [
+            "confirmation"
+          ],
+          "retrieved": [
+            "confirmation",
+            "cancellation",
+            "mouse"
+          ],
+          "scores": [
+            0.08620689655172414,
+            0.05128205128205128,
+            0.04081632653061224
+          ]
+        },
+        {
+          "query": "键盘坏了怎么修",
+          "expected": [
+            "warranty"
+          ],
+          "retrieved": [
+            "warranty",
+            "keyboard",
+            "mouse"
+          ],
+          "scores": [
+            0.09523809523809523,
+            0.043478260869565216,
+            0.022222222222222223
+          ]
+        },
+        {
+          "query": "我能看别人的购买记录吗",
+          "expected": [
+            "privacy"
+          ],
+          "retrieved": [
+            "hub",
+            "confirmation",
+            "returns"
+          ],
+          "scores": [
+            0.038461538461538464,
+            0.03333333333333333,
+            0.03225806451612903
+          ]
+        }
+      ]
+    },
+    "bm25_multigrain": {
+      "hit_at_1": 0.8148,
+      "hit_at_3": 0.9259,
+      "mrr_at_3": 0.8642,
+      "unknown_empty_rate": 1.0,
+      "details": [
+        {
+          "query": "退货需要保持包装完整吗",
+          "expected": [
+            "returns"
+          ],
+          "retrieved": [
+            "returns",
+            "shipping",
+            "charger"
+          ],
+          "scores": [
+            14.2821,
+            0.5954,
+            0.5547
+          ]
+        },
+        {
+          "query": "退款多久原路返回",
+          "expected": [
+            "returns"
+          ],
+          "retrieved": [
+            "returns",
+            "confirmation",
+            "payment"
+          ],
+          "scores": [
+            10.1295,
+            2.1339,
+            0.2482
+          ]
+        },
+        {
+          "query": "订单多少金额包邮",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "cancellation",
+            "privacy"
+          ],
+          "scores": [
+            4.7078,
+            2.1979,
+            2.0584
+          ]
+        },
+        {
+          "query": "偏远地区配送要多久",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "returns",
+            "privacy"
+          ],
+          "scores": [
+            12.8817,
+            0.3036,
+            0.3036
+          ]
+        },
+        {
+          "query": "支付后多少小时发货",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "shipping",
+            "payment",
+            "speaker"
+          ],
+          "scores": [
+            6.9163,
+            6.1835,
+            2.2622
+          ]
+        },
+        {
+          "query": "人为损坏能免费维修吗",
+          "expected": [
+            "warranty"
+          ],
+          "retrieved": [
+            "warranty",
+            "returns",
+            "shipping"
+          ],
+          "scores": [
+            19.9254,
+            0.4886,
+            0.3839
+          ]
+        },
+        {
+          "query": "充电板质保几个月",
+          "expected": [
+            "warranty",
+            "charger"
+          ],
+          "retrieved": [
+            "charger",
+            "warranty",
+            "speaker"
+          ],
+          "scores": [
+            8.5915,
+            6.6949,
+            1.9747
+          ]
+        },
+        {
+          "query": "模拟支付会扣款吗",
+          "expected": [
+            "payment"
+          ],
+          "retrieved": [
+            "payment",
+            "cancellation",
+            "confirmation"
+          ],
+          "scores": [
+            11.7507,
+            2.1687,
+            1.3251
+          ]
+        },
+        {
+          "query": "可以申请电子发票吗",
+          "expected": [
+            "payment"
+          ],
+          "retrieved": [
+            "payment",
+            "cancellation",
+            "returns"
+          ],
+          "scores": [
+            10.9693,
+            2.2974,
+            1.91
+          ]
+        },
+        {
+          "query": "取消订单会释放库存吗",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "cancellation",
+            "confirmation",
+            "privacy"
+          ],
+          "scores": [
+            16.4211,
+            5.4476,
+            2.3619
+          ]
+        },
+        {
+          "query": "已支付订单可以取消吗",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "cancellation",
+            "confirmation",
+            "payment"
+          ],
+          "scores": [
+            16.8433,
+            5.2047,
+            3.3404
+          ]
+        },
+        {
+          "query": "能查询其他用户订单吗",
+          "expected": [
+            "privacy"
+          ],
+          "retrieved": [
+            "privacy",
+            "confirmation",
+            "cancellation"
+          ],
+          "scores": [
+            19.5698,
+            6.2658,
+            2.1979
+          ]
+        },
+        {
+          "query": "AI操作确认有效期多久",
+          "expected": [
+            "confirmation"
+          ],
+          "retrieved": [
+            "confirmation",
+            "shipping",
+            "warranty"
+          ],
+          "scores": [
+            18.8877,
+            0.3839,
+            0.3418
+          ]
+        },
+        {
+          "query": "H1耳机支持主动降噪吗",
+          "expected": [
+            "headphones"
+          ],
+          "retrieved": [
+            "headphones",
+            "warranty",
+            "charger"
+          ],
+          "scores": [
+            18.44,
+            2.2362,
+            1.5606
+          ]
+        },
+        {
+          "query": "K8键盘兼容macOS吗",
+          "expected": [
+            "keyboard"
+          ],
+          "retrieved": [
+            "keyboard",
+            "warranty",
+            "mouse"
+          ],
+          "scores": [
+            13.0721,
+            2.3259,
+            0.3147
+          ]
+        },
+        {
+          "query": "Q15充电板支持Qi吗",
+          "expected": [
+            "charger"
+          ],
+          "retrieved": [
+            "charger",
+            "warranty",
+            "hub"
+          ],
+          "scores": [
+            14.694,
+            4.3269,
+            1.6353
+          ]
+        },
+        {
+          "query": "S2音箱防水等级是多少",
+          "expected": [
+            "speaker"
+          ],
+          "retrieved": [
+            "speaker",
+            "warranty",
+            "mouse"
+          ],
+          "scores": [
+            11.0703,
+            2.2761,
+            0.2576
+          ]
+        },
+        {
+          "query": "M3鼠标支持蓝牙吗",
+          "expected": [
+            "mouse"
+          ],
+          "retrieved": [
+            "mouse",
+            "keyboard",
+            "headphones"
+          ],
+          "scores": [
+            10.0289,
+            2.8232,
+            2.7674
+          ]
+        },
+        {
+          "query": "D7扩展坞可以连接显示器吗",
+          "expected": [
+            "hub"
+          ],
+          "retrieved": [
+            "hub",
+            "warranty",
+            "payment"
+          ],
+          "scores": [
+            20.0916,
+            4.4435,
+            2.3475
+          ]
+        },
+        {
+          "query": "zzzzzzzz",
+          "expected": [],
+          "retrieved": [],
+          "scores": []
+        },
+        {
+          "query": "火星移民指南",
+          "expected": [],
+          "retrieved": [],
+          "scores": []
+        },
+        {
+          "query": "东西还没付钱不想要了",
+          "expected": [
+            "cancellation"
+          ],
+          "retrieved": [
+            "payment",
+            "cancellation",
+            "shipping"
+          ],
+          "scores": [
+            0.6363,
+            0.5395,
+            0.3579
+          ]
+        },
+        {
+          "query": "快递寄新疆要几天",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "mouse",
+            "returns",
+            "privacy"
+          ],
+          "scores": [
+            0.3147,
+            0.2443,
+            0.2443
+          ]
+        },
+        {
+          "query": "耳机电池能撑多久",
+          "expected": [
+            "headphones"
+          ],
+          "retrieved": [
+            "headphones",
+            "warranty",
+            "charger"
+          ],
+          "scores": [
+            3.4224,
+            2.4614,
+            0.6051
+          ]
+        },
+        {
+          "query": "买89块的充电板要付多少邮费",
+          "expected": [
+            "shipping"
+          ],
+          "retrieved": [
+            "charger",
+            "warranty",
+            "shipping"
+          ],
+          "scores": [
+            9.1406,
+            4.602,
+            0.9906
+          ]
+        },
+        {
+          "query": "笔记本接外屏需要什么条件",
+          "expected": [
+            "hub"
+          ],
+          "retrieved": [
+            "hub",
+            "payment",
+            "returns"
+          ],
+          "scores": [
+            6.6644,
+            0.9058,
+            0.5936
+          ]
+        },
+        {
+          "query": "不用我点按钮你就能加购吗",
+          "expected": [
+            "confirmation"
+          ],
+          "retrieved": [
+            "confirmation",
+            "mouse",
+            "cancellation"
+          ],
+          "scores": [
+            3.3821,
+            0.7647,
+            0.6194
+          ]
+        },
+        {
+          "query": "键盘坏了怎么修",
+          "expected": [
+            "warranty"
+          ],
+          "retrieved": [
+            "keyboard",
+            "warranty",
+            "mouse"
+          ],
+          "scores": [
+            3.672,
+            3.5783,
+            0.3147
+          ]
+        },
+        {
+          "query": "我能看别人的购买记录吗",
+          "expected": [
+            "privacy"
+          ],
+          "retrieved": [
+            "hub",
+            "confirmation",
+            "returns"
+          ],
+          "scores": [
+            0.7556,
+            0.6589,
+            0.6379
+          ]
+        }
+      ]
+    }
+  }
+}

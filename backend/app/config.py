@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from typing import Literal
 
 
 class Settings(BaseSettings):
@@ -7,10 +8,16 @@ class Settings(BaseSettings):
     llm_model: str = "deepseek-chat"
     host: str = "0.0.0.0"
     port: int = 8000
-    chroma_persist_dir: str = "./chroma_db"
-    data_provider: str = "demo"
+    database_path: str = "./data/shop.db"
+    database_url: str = (
+        "mysql+pymysql://shiwu:shiwu_local@127.0.0.1:3306/shiwu?charset=utf8mb4"
+    )
+    ai_mode: Literal["demo", "llm"] = "demo"
+    session_hours: int = 24
+    seed_demo: bool = True
+    cors_origins: str = "http://localhost:3000,http://127.0.0.1:3000"
 
-    model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
+    model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "extra": "ignore"}
 
 
 settings = Settings()

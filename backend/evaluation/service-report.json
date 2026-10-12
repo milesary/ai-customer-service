@@ -1,0 +1,64 @@
+{
+  "scope": "Hand-authored business flow contracts in rule mode, not LLM task completion or answer accuracy.",
+  "database": "sqlite-isolated",
+  "mode": "demo",
+  "passed": 11,
+  "total": 11,
+  "cases": [
+    {
+      "case": "test_handoff_human_reply_completion_and_ai_resume",
+      "passed": true,
+      "elapsed_ms": 597
+    },
+    {
+      "case": "test_customer_context_and_admin_permissions",
+      "passed": true,
+      "elapsed_ms": 580
+    },
+    {
+      "case": "test_handoff_rejects_pending_writes_and_busy_conversation",
+      "passed": true,
+      "elapsed_ms": 398
+    },
+    {
+      "case": "test_model_handoff_confirmation_and_ticket_scope",
+      "passed": true,
+      "elapsed_ms": 482
+    },
+    {
+      "case": "test_fulfillment_restocks_and_state_constraints",
+      "passed": true,
+      "elapsed_ms": 595
+    },
+    {
+      "case": "test_after_sale_linked_to_conversation",
+      "passed": true,
+      "elapsed_ms": 391
+    },
+    {
+      "case": "test_concurrent_confirmation_is_idempotent",
+      "passed": true,
+      "elapsed_ms": 388
+    },
+    {
+      "case": "test_run_timing_and_trace_recorded",
+      "passed": true,
+      "elapsed_ms": 479
+    },
+    {
+      "case": "test_delete_conversation_hides_history_and_rejects_pending_actions",
+      "passed": true,
+      "elapsed_ms": 729
+    },
+    {
+      "case": "test_delete_conversation_requires_ownership_and_authentication",
+      "passed": true,
+      "elapsed_ms": 571
+    },
+    {
+      "case": "test_delete_conversation_blocks_busy_and_active_handoff",
+      "passed": true,
+      "elapsed_ms": 516
+    }
+  ]
+}

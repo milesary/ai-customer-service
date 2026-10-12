@@ -14,6 +14,11 @@ chroma_db/
 # Node
 node_modules/
 .next/
+.next-*/
+backend/data/
+logs/
+.local-services/
+*.tsbuildinfo
 out/
 build
 

@@ -1,79 +1,28 @@
-# 贡献指南
+# 开发指南
 
-## 开发环境
+环境与启动见 [README](README.md)。Python 3.12+，Node.js 22+；默认规则模式无需模型密钥。
 
-- Python 3.13+
-- Node.js 22+
-- 一个 OpenAI 兼容的 LLM API Key（DeepSeek / OpenAI 等）
+## 提交前
 
-## 快速开始
-
-```bash
-# 后端
+```powershell
 cd backend
-cp .env.example .env  # 填入你的 API Key
-pip install -r requirements.txt
-pip install langgraph langchain-community
-python seed_data.py
-
-# 前端
-cd frontend
-npm install
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe evaluation/run.py
+.\.venv\Scripts\python.exe evaluation/service_run.py
+cd ..\frontend
+npm run build
 ```
 
-## 项目结构
+真实模型验证脚本 `backend/scripts/smoke_llm.py` 会调用配置的供应商并产生少量费用，请按需要手动运行。
+不要提交密钥、真实用户会话、运行数据库或付款数据。样例必须是虚构或经过授权脱敏的数据。
 
-```
-backend/app/
-├── agents/         # LangGraph Agent 节点
-│   ├── graph.py           # 工作流编排
-│   ├── router_agent.py    # 意图分类
-│   ├── knowledge_agent.py # RAG 知识库
-│   ├── tool_agent.py      # 工具调用
-│   ├── escalation_agent.py# 工单升级
-│   └── summary_agent.py   # 汇总回复
-├── data/           # 数据抽象层 ★
-│   ├── base.py            # 数据模型 + 接口
-│   ├── demo_provider.py   # 演示数据
-│   └── config.py          # Provider 选择
-├── knowledge_base/ # 知识库检索
-└── main.py         # FastAPI 入口
-```
+## 改动约束
 
-## 代码风格
+- 新工具须定义 Pydantic 参数模型，并通过服务端用户身份约束数据范围。
+- AI 写操作须进入待确认流程，禁止增加模型可直接执行的支付、退款或管理员工具。
+- 库存、订单、购物车的一致性须保留在事务内。新增状态转换应补对应失败与重试测试。
+- 检索算法在相同语料及标注上对比，保留失败样例；不要仅通过更新样例来宣称提升。
+- 前端请求经 `/api` 代理；自定义后端地址使用服务端 `BACKEND_URL`。
+- 新部署方式必须提供持久数据库。使用 MySQL 8.0.16+ / InnoDB；默认单测用隔离 SQLite，MySQL 语义须用专用 MYSQL_TEST_URL 验证。
 
-- Python: PEP 8，使用 `black` + `isort` + `ruff`
-- TypeScript: 使用项目 ESLint 配置
-- 提交前运行 `ruff check` 和 `tsc --noEmit`
-
-## 如何添加自定义数据 Provider
-
-参考 [docs/DATA_PROVIDER.md](docs/DATA_PROVIDER.md)
-
-1. 实现 `ECommerceDataProvider` 抽象基类
-2. 设置环境变量 `DATA_PROVIDER=myapp.providers:MyCustomProvider`
-3. 启动系统即可使用你的数据源
-
-## PR 流程
-
-1. Fork 本仓库
-2. 创建功能分支: `git checkout -b feat/my-feature`
-3. 提交更改: `git commit -m "feat: my feature"`
-4. 推送到分支: `git push origin feat/my-feature`
-5. 创建 Pull Request
-
-### Commit 规范
-
-- `feat:` 新功能
-- `fix:` Bug 修复
-- `refactor:` 重构
-- `docs:` 文档
-- `chore:` 构建/工具
-
-## 报告 Issue
-
-请包含：
-- 系统环境（Python 版本、OS）
-- 复现步骤
-- 期望行为与实际行为
-- 完整的错误日志
+建议分支前缀 `codex/`，提交消息使用 `feat:`、`fix:`、`refactor:`、`docs:` 或 `test:`。
